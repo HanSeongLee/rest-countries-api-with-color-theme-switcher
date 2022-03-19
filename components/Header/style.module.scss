@@ -1,0 +1,31 @@
+
+.header {
+  background: var(--theme-header-background);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.056);
+  padding: 30px 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .title {
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .darkModeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 8px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
