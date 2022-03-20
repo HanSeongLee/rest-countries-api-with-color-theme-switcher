@@ -12,7 +12,7 @@ const DarkModeButton: React.FC<ButtonHTMLAttributes<HTMLButtonElement>> = (props
         <button onClick={onClick}
                 {...props}
         >
-            <img src={`/img/icon-crescent${theme === 'light' ? '-outline' : ''}.svg`}
+            <img src={theme === 'light' ? '/img/icon-crescent-outline.svg' : '/img/icon-crescent.svg'}
                  alt={''}
             />
             Dark Mode
