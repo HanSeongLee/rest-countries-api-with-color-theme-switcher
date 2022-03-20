@@ -8,6 +8,7 @@ $breakpoints: (mobile: 568px, tablet: 767px, desktop: 992px);
   --theme-floating-background: #FFFFFF;
   --theme-input-search-icon: url("/img/icon-search-light.svg");
   --theme-input-placeholder-color: #C4C4C4;
+  --theme-chevron-icon: url("/img/icon-chevron-down-light.svg");
 }
 
 .dark {
@@ -16,4 +17,5 @@ $breakpoints: (mobile: 568px, tablet: 767px, desktop: 992px);
   --theme-floating-background: #2B3844;
   --theme-input-search-icon: url("/img/icon-search-dark.svg");
   --theme-input-placeholder-color: #FFFFFF;
+  --theme-chevron-icon: url("/img/icon-chevron-down-dark.svg");
 }
