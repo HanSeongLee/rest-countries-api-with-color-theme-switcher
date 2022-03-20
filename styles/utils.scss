@@ -5,11 +5,15 @@ $breakpoints: (mobile: 568px, tablet: 767px, desktop: 992px);
 .light {
   --theme-background: #F2F2F2;
   --theme-color: #111517;
-  --theme-header-background: #FFFFFF;
+  --theme-floating-background: #FFFFFF;
+  --theme-input-search-icon: url("/img/icon-search-light.svg");
+  --theme-input-placeholder-color: #C4C4C4;
 }
 
 .dark {
   --theme-background: #202C36;
   --theme-color: #FFFFFF;
-  --theme-header-background: #2B3844;
+  --theme-floating-background: #2B3844;
+  --theme-input-search-icon: url("/img/icon-search-dark.svg");
+  --theme-input-placeholder-color: #FFFFFF;
 }
