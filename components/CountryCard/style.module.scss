@@ -1,0 +1,44 @@
+
+.countryCard {
+  max-width: 264px;
+  background: var(--theme-floating-background);
+  box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.03);
+  border-radius: 5px;
+  overflow: hidden;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 160px;
+    overflow: hidden;
+    object-position: center;
+
+    .headerImage {
+      flex: 1;
+    }
+  }
+
+  .body {
+    font-size: 14px;
+    line-height: 16px;
+    padding: 24px 24px 46px;
+
+    .countryName {
+      font-weight: 800;
+      font-size: 18px;
+      line-height: 26px;
+      margin-bottom: 16px;
+    }
+
+    .countryPropertyContainer {
+      display: flex;
+      flex-direction: column;
+      grid-gap: 8px;
+
+      .countryHeader {
+        font-weight: 600;
+      }
+    }
+  }
+}
