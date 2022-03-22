@@ -1,0 +1,15 @@
+
+
+.searchFilter {
+  padding: 24px 0 32px;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 40px;
+  }
+
+  .regionFilter {
+    width: 200px;
+  }
+}
