@@ -9,6 +9,7 @@ $breakpoints: (mobile: 568px, tablet: 767px, desktop: 992px);
   --theme-input-search-icon: url("/img/icon-search-light.svg");
   --theme-input-placeholder-color: #C4C4C4;
   --theme-chevron-icon: url("/img/icon-chevron-down-light.svg");
+  --theme-arrow-left-icon: url("/img/icon-arrow-left-light.svg");
 }
 
 .dark {
@@ -18,4 +19,5 @@ $breakpoints: (mobile: 568px, tablet: 767px, desktop: 992px);
   --theme-input-search-icon: url("/img/icon-search-dark.svg");
   --theme-input-placeholder-color: #FFFFFF;
   --theme-chevron-icon: url("/img/icon-chevron-down-dark.svg");
+  --theme-arrow-left-icon: url("/img/icon-arrow-left-dark.svg");
 }
