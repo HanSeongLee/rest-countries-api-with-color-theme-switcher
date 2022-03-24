@@ -19,4 +19,8 @@ const Button: React.FC<IProps> = ({ variants, children, ...props }) => {
     );
 };
 
+Button.defaultProps = {
+    variants: 'primary',
+};
+
 export default Button;
