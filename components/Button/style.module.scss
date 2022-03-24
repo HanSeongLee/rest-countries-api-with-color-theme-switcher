@@ -4,7 +4,8 @@
   background: var(--theme-floating-background);
   border: none;
   border-radius: 2px;
-  padding: 6px 0;
+  padding: 6px 4px;
+  cursor: pointer;
 
   &.primary {
     font-size: 12px;
