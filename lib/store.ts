@@ -15,20 +15,38 @@ type InitialState = {
         flags: {
             svg: string;
             png: string;
-        }[];
+        };
     }[];
+    country: {
+        name: string;
+        nativeName: string;
+        capital?: string;
+        region: string;
+        subRegion: string;
+        population: number;
+        flags: {
+            svg: string;
+            png: string;
+        };
+        topLevelDomain: string[];
+        currencies: string[];
+        languages: string[];
+        borderCountries: string[];
+    };
+    isoCode: {};
+    allCountries: () => void;
+    countriesByName: (name: string) => void;
+    countriesByRegion: (region: string) => void;
+    countryDetailsByName: (name: string) => void;
 };
-type UseStoreState = typeof initializeStore extends (
-    ...args: never
-) => UseStore<infer T>
-    ? T
-    : never;
 
 const initialState = {
     countries: [],
+    country: null,
+    isoCode: {},
 };
 
-const zustandContext = createContext<UseStoreState>();
+const zustandContext = createContext<InitialState>();
 export const Provider = zustandContext.Provider;
 export const useStore = zustandContext.useStore;
 
@@ -73,7 +91,28 @@ function initializeStore(preloadedState = {}) {
                         countries: [],
                     });
                 }
-            }
+            },
+            countryDetailsByName: async (name: string) => {
+                try {
+                    const {data: countryData} = await axios.get(`https://restcountries.com/v2/name/${name}?fields=flags,name,nativeName,population,region,subregion,capital,topLevelDomain,currencies,languages,borders`);
+                    const country = countryData.filter(({name: countryName}: {name: string}) => countryName.toLowerCase() === name)[0];
+                    const codes = country.borders.join(',');
+                    const {data: CodeNameData} = await axios.get(`https://restcountries.com/v2/alpha?codes=${codes}&fields=name`);
+
+                    set({
+                        country: {
+                            ...country,
+                            currencies: country.currencies.map(({name}: {name: string}) => name),
+                            languages: country.languages.map(({name}: {name: string}) => name),
+                            borderCountries: CodeNameData.map(({name}: {name: string}) => name),
+                        },
+                    });
+                } catch (e) {
+                    set({
+                        country: null,
+                    });
+                }
+            },
         }))
     );
 };
