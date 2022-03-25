@@ -1,5 +1,10 @@
+@import "styles/utils";
 
 .inputField {
+
+  @include media(">desktop") {
+    width: 480px;
+  }
 
   &.icon {
     position: relative;
@@ -9,10 +14,18 @@
       top: 16px;
       left: 32px;
       content: var(--icon);
+
+      @include media(">desktop") {
+        top: 19px;
+      }
     }
 
     .input {
       padding: 14px 15px 14px 74px;
+
+      @include media(">desktop") {
+        padding: 18px 15px 18px 74px;
+      }
     }
   }
 
@@ -26,6 +39,11 @@
     border: none;
     padding: 14px 15px;
     outline: none;
+
+    @include media(">desktop") {
+      font-size: 14px;
+      line-height: 20px;
+    }
 
     &::placeholder {
       color: var(--theme-input-placeholder-color);
