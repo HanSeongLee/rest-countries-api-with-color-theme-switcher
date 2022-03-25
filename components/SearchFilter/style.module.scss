@@ -1,12 +1,21 @@
-
+@import "styles/utils";
 
 .searchFilter {
   padding: 24px 0 32px;
+
+  @include media(">desktop") {
+    padding: 48px 0;
+  }
 
   .container {
     display: flex;
     flex-direction: column;
     grid-gap: 40px;
+
+    @include media(">desktop") {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   .regionFilter {
