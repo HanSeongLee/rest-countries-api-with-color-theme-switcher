@@ -1,3 +1,4 @@
+@import "styles/utils";
 
 .select {
   position: relative;
@@ -5,6 +6,11 @@
   flex-direction: column;
   font-size: 12px;
   line-height: 20px;
+
+  @include media(">desktop") {
+    font-size: 14px;
+    line-height: 20px;
+  }
 
   &.open {
     .selectBox {
@@ -26,6 +32,10 @@
     padding: 14px 19px 14px 24px;
     cursor: pointer;
 
+    @include media(">desktop") {
+      padding: 18px 18px 18px 24px;
+    }
+
     &::after {
       position: absolute;
       top: 50%;
@@ -37,6 +47,11 @@
       background-size: cover;
       transform: translateY(-50%);
       transition: transform 0.3s;
+
+      @include media(">desktop") {
+        width: 12px;
+        height: 12px;
+      }
     }
   }
 
@@ -59,9 +74,18 @@
     font-size: 12px;
     line-height: 16px;
 
+    @include media(">desktop") {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
     .item {
       cursor: pointer;
       padding: 4px 24px;
+
+      @include media(">desktop") {
+        padding-top: 8px;
+      }
 
       &:first-child {
         padding-top: 16px;
