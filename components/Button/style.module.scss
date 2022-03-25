@@ -1,3 +1,4 @@
+@import "styles/utils";
 
 .button {
   min-width: 96px;
@@ -7,14 +8,23 @@
   padding: 6px 4px;
   cursor: pointer;
 
+  @include media(">desktop") {
+    padding: 5px 10px 4px;
+  }
+
   &.primary {
     font-size: 12px;
     line-height: 16px;
     box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
+
+    @include media(">desktop") {
+      font-size: 14px;
+      line-height: 19px;
+    }
   }
 
   &.back {
-    width: 104px;
+    min-width: 104px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,6 +33,14 @@
     line-height: 20px;
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
 
+    @include media(">desktop") {
+      font-size: 16px;
+      line-height: 20px;
+      border-radius: 6px;
+      padding: 10px 39px 10px 32px;
+      grid-gap: 10px;
+    }
+
     &::before {
       display: inline-block;
       width: 18px;
@@ -30,6 +48,11 @@
       background: var(--theme-arrow-left-icon) no-repeat;
       background-size: cover;
       content: "";
+
+      @include media(">desktop") {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 }
