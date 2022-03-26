@@ -96,18 +96,31 @@ function initializeStore(preloadedState = {}) {
                 try {
                     const {data: countryData} = await axios.get(`https://restcountries.com/v2/name/${name}?fields=flags,name,nativeName,population,region,subregion,capital,topLevelDomain,currencies,languages,borders`);
                     const country = countryData.filter(({name: countryName}: {name: string}) => countryName.toLowerCase() === name)[0];
-                    const codes = country.borders.join(',');
-                    const {data: CodeNameData} = await axios.get(`https://restcountries.com/v2/alpha?codes=${codes}&fields=name`);
+                    if (country?.borders?.length > 0) {
+                        const codes = country?.borders?.join(',');
+                        const {data: CodeNameData} = await axios.get(`https://restcountries.com/v2/alpha?codes=${codes}&fields=name`);
+
+                        set({
+                            country: {
+                                ...country,
+                                currencies: country.currencies.map(({name}: {name: string}) => name),
+                                languages: country.languages.map(({name}: {name: string}) => name),
+                                borderCountries: CodeNameData.map(({name}: {name: string}) => name),
+                            },
+                        });
+                        return;
+                    }
 
                     set({
                         country: {
                             ...country,
                             currencies: country.currencies.map(({name}: {name: string}) => name),
                             languages: country.languages.map(({name}: {name: string}) => name),
-                            borderCountries: CodeNameData.map(({name}: {name: string}) => name),
+                            borderCountries: [],
                         },
                     });
                 } catch (e) {
+                    console.log(e)
                     set({
                         country: null,
                     });
