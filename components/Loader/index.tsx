@@ -24,7 +24,7 @@ const Loader: React.FC<IProps> = ({ className, color, loading, size, ...props })
 
 Loader.defaultProps = {
     loading: true,
-    size: 25,
+    size: 20,
 };
 
 export default Loader;
