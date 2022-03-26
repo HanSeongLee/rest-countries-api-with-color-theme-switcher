@@ -19,7 +19,7 @@ const CountryDetailsContainer: React.FC<IProps> = ({ countryName, ...props }) =>
     return (
         <div {...props}>
             {country && (
-                <CountryDetails flag={country?.flags.png}
+                <CountryDetails flag={country?.flags.svg}
                                 name={country?.name}
                                 nativeName={country?.nativeName}
                                 population={country?.population}

@@ -12,7 +12,7 @@ const CountryContainer: React.FC<HTMLAttributes<HTMLDivElement>> = (props) => {
 
     return (
         <div {...props}>
-            {countries?.map(({flags: {png}, name, region, capital, population}, index) => (
+            {countries?.map(({flags: {svg}, name, region, capital, population}, index) => (
                 <Link href={`/countries/${String(name).toLowerCase()}`}
                       key={index}
                 >
@@ -21,7 +21,7 @@ const CountryContainer: React.FC<HTMLAttributes<HTMLDivElement>> = (props) => {
                                      region={region}
                                      capital={capital}
                                      population={population}
-                                     flag={png}
+                                     flag={svg}
 
                         />
                     </a>
