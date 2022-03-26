@@ -8,14 +8,15 @@
 
   .header {
     display: flex;
-    align-items: center;
     justify-content: center;
+    width: 264px;
     height: 160px;
     overflow: hidden;
-    object-position: center;
 
     .headerImage {
       flex: 1;
+      object-fit: cover;
+      object-position: center;
     }
   }
 
