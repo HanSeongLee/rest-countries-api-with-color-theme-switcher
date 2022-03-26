@@ -1,0 +1,12 @@
+@import "styles/utils";
+
+.container {
+  display: flex;
+}
+
+.countryContainer {
+  flex: 1;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}

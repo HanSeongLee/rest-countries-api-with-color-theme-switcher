@@ -1,5 +1,10 @@
 import type { NextPage } from 'next'
+import styles from './style.module.scss';
 import Head from 'next/head';
+import Header from "../components/Header";
+import SearchFilter from "../components/SearchFilter";
+import CountryContainer from "../containers/CountryContainer";
+import Container from "../components/Container";
 
 const Home: NextPage = () => {
   return (
@@ -53,7 +58,12 @@ const Home: NextPage = () => {
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png"/>
         </Head>
 
-        <main>
+        <main className={styles.main}>
+          <Header/>
+          <SearchFilter/>
+          <Container className={styles.container}>
+            <CountryContainer className={styles.countryContainer}/>
+          </Container>
         </main>
       </>
   );
