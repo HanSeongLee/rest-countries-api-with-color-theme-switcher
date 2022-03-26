@@ -29,54 +29,56 @@ const CountryDetails: React.FC<IProps> = ({
                  alt={''}
             />
 
-            <h2 className={styles.countryName}>
-                {name}
-            </h2>
-            <div className={styles.groupContainer}>
-                <div>
-                    <CountryProperty label={'Native Name'}>
-                        {nativeName}
-                    </CountryProperty>
-                    <CountryProperty label={'Population'}>
-                        {population}
-                    </CountryProperty>
-                    <CountryProperty label={'Region'}>
-                        {region}
-                    </CountryProperty>
-                    <CountryProperty label={'Sub Region'}>
-                        {subRegion}
-                    </CountryProperty>
-                    <CountryProperty label={'Capital'}>
-                        {capital}
-                    </CountryProperty>
-                </div>
-                <div>
-                    <CountryProperty label={'Top Level Domain'}>
-                        {topLevelDomain?.join(', ')}
-                    </CountryProperty>
-                    <CountryProperty label={'Currencies'}>
-                        {currencies?.join(', ')}
-                    </CountryProperty>
-                    <CountryProperty label={'Languages'}>
-                        {languages?.join(', ')}
-                    </CountryProperty>
-                </div>
-                <div>
-                    <h3 className={styles.borderCountries}>
-                        Border Countries
-                    </h3>
-                    <div className={styles.borderCountryContainer}>
-                        {borderCountries?.map((country, index) => (
-                            <Link href={`/countries/${country.toLowerCase()}`}
-                                  key={index}
-                            >
-                                <a>
-                                    <Button>
-                                        {country}
-                                    </Button>
-                                </a>
-                            </Link>
-                        ))}
+            <div className={styles.content}>
+                <h2 className={styles.countryName}>
+                    {name}
+                </h2>
+                <div className={styles.groupContainer}>
+                    <div>
+                        <CountryProperty label={'Native Name'}>
+                            {nativeName}
+                        </CountryProperty>
+                        <CountryProperty label={'Population'}>
+                            {population}
+                        </CountryProperty>
+                        <CountryProperty label={'Region'}>
+                            {region}
+                        </CountryProperty>
+                        <CountryProperty label={'Sub Region'}>
+                            {subRegion}
+                        </CountryProperty>
+                        <CountryProperty label={'Capital'}>
+                            {capital}
+                        </CountryProperty>
+                    </div>
+                    <div>
+                        <CountryProperty label={'Top Level Domain'}>
+                            {topLevelDomain?.join(', ')}
+                        </CountryProperty>
+                        <CountryProperty label={'Currencies'}>
+                            {currencies?.join(', ')}
+                        </CountryProperty>
+                        <CountryProperty label={'Languages'}>
+                            {languages?.join(', ')}
+                        </CountryProperty>
+                    </div>
+                    <div className={styles.borderCountryGroup}>
+                        <h3 className={styles.borderCountries}>
+                            Border Countries:
+                        </h3>
+                        <div className={styles.borderCountryContainer}>
+                            {borderCountries?.map((country, index) => (
+                                <Link href={`/countries/${country.toLowerCase()}`}
+                                      key={index}
+                                >
+                                    <a>
+                                        <Button>
+                                            {country}
+                                        </Button>
+                                    </a>
+                                </Link>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
