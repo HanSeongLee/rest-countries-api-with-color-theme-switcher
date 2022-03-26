@@ -94,6 +94,10 @@ function initializeStore(preloadedState = {}) {
             },
             countryDetailsByName: async (name: string) => {
                 try {
+                    set({
+                        country: null,
+                    });
+
                     const {data: countryData} = await axios.get(`https://restcountries.com/v2/name/${name}?fields=flags,name,nativeName,population,region,subregion,capital,topLevelDomain,currencies,languages,borders`);
                     const country = countryData.filter(({name: countryName}: {name: string}) => countryName.toLowerCase() === name)[0];
                     if (country?.borders?.length > 0) {
@@ -120,7 +124,6 @@ function initializeStore(preloadedState = {}) {
                         },
                     });
                 } catch (e) {
-                    console.log(e)
                     set({
                         country: null,
                     });
