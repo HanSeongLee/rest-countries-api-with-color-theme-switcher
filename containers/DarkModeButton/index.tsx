@@ -3,7 +3,7 @@ import {useTheme} from "next-themes";
 
 const DarkModeButton: React.FC<ButtonHTMLAttributes<HTMLButtonElement>> = (props) => {
     const { theme, setTheme } = useTheme();
-    const [clientTheme, setClientTheme] = useState();
+    const [clientTheme, setClientTheme] = useState('light');
 
     const onClick = useCallback(() => {
         setTheme(theme === 'dark' ? 'light' : 'dark');
