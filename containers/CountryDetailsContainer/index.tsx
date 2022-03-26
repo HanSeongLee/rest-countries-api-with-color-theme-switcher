@@ -1,6 +1,7 @@
 import React, {HTMLAttributes, useEffect} from "react";
 import CountryDetails from "../../components/CountryDetails";
 import useCountries from "../../lib/useCountries";
+import ThemeLoader from "../ThemeLoader";
 
 interface IProps extends HTMLAttributes<HTMLDivElement> {
     countryName: string;
@@ -18,7 +19,7 @@ const CountryDetailsContainer: React.FC<IProps> = ({ countryName, ...props }) =>
 
     return (
         <div {...props}>
-            {country && (
+            {country ? (
                 <CountryDetails flag={country?.flags.svg}
                                 name={country?.name}
                                 nativeName={country?.nativeName}
@@ -31,6 +32,8 @@ const CountryDetailsContainer: React.FC<IProps> = ({ countryName, ...props }) =>
                                 languages={country?.languages}
                                 borderCountries={country?.borderCountries}
                 />
+            ) : (
+                <ThemeLoader />
             )}
         </div>
     );
