@@ -107,9 +107,9 @@ function initializeStore(preloadedState = {}) {
                         set({
                             country: {
                                 ...country,
-                                currencies: country.currencies.map(({name}: {name: string}) => name),
-                                languages: country.languages.map(({name}: {name: string}) => name),
-                                borderCountries: CodeNameData.map(({name}: {name: string}) => name),
+                                currencies: country?.currencies?.map(({name}: {name: string}) => name) || [],
+                                languages: country?.languages?.map(({name}: {name: string}) => name) || [],
+                                borderCountries: CodeNameData?.map(({name}: {name: string}) => name) || [],
                             },
                         });
                         return;
@@ -118,8 +118,8 @@ function initializeStore(preloadedState = {}) {
                     set({
                         country: {
                             ...country,
-                            currencies: country.currencies.map(({name}: {name: string}) => name),
-                            languages: country.languages.map(({name}: {name: string}) => name),
+                            currencies: country?.currencies?.map(({name}: {name: string}) => name) || [],
+                            languages: country?.languages?.map(({name}: {name: string}) => name) || [],
                             borderCountries: [],
                         },
                     });
