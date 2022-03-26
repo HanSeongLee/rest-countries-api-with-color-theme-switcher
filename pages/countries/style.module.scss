@@ -1,0 +1,17 @@
+@import "styles/utils";
+
+.container {
+  padding-top: 40px !important;
+
+  @include media(">desktop") {
+    padding-top: 80px !important;
+  }
+}
+
+.countryDetailsContainer {
+  padding: 64px 0 60px;
+
+  @include media(">desktop") {
+    padding: 80px 0 60px;
+  }
+}
