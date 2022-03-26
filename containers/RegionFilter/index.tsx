@@ -37,7 +37,7 @@ const RegionFilter: React.FC<HTMLAttributes<HTMLDivElement>> = (props) => {
                         },
                         {
                             label: 'America',
-                            value: 'america',
+                            value: 'americas',
                         },
                         {
                             label: 'Asia',
